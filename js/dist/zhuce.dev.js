@@ -91,15 +91,21 @@ $(function () {
           username: $('.phone').val(),
           password: $('.phone').val().substr(7)
         },
+        async: false,
         dataType: "json",
-        error: function error(data) {
-          console.log(data);
-        },
+        // error: function (data) {
+        //     console.log(data.code);
+        // },
         success: function success(data) {
           console.log(data);
+          console.log(data.code);
 
-          if (data.code == 1) {//注册成功跳转到登录页面
-            // location.href = './denglu.html';
+          if (data.code == 1) {
+            alert('注册成功'); //注册成功跳转到登录页面
+
+            location.href = './denglu.html';
+          } else {
+            alert('账号已存在');
           }
         }
       });

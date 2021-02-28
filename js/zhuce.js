@@ -109,15 +109,20 @@ $(function () {
                     username: $('.phone').val(),
                     password: $('.phone').val().substr(7)
                 },
+                async: false,
                 dataType: "json",
-                error: function (data) {
-                    console.log(data)
-                },
+                // error: function (data) {
+                //     console.log(data.code);
+                // },
                 success: function (data) {
                     console.log(data)
+                    console.log(data.code)
                     if (data.code == 1) {
+                        alert('注册成功')
                         //注册成功跳转到登录页面
-                        // location.href = './denglu.html';
+                        location.href = './denglu.html';
+                    }else{
+                        alert('账号已存在');
                     }
                 }
             })

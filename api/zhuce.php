@@ -2,7 +2,7 @@
     // 获取数据
     $user = $_POST['username'];
     $pass = $_POST['password'];
-    print_r ($user);
+    // print_r ($user);
 
         // 链接数据库
         $con = mysqli_connect('localhost','root','123123','chuizi');
@@ -35,7 +35,7 @@
             echo json_encode(array(
                 "code" => 1,
                 "message" => "注册成功"
-              ));
+              ),JSON_UNESCAPED_UNICODE);
                
         }
 
