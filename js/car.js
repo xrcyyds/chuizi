@@ -14,6 +14,11 @@ if (!login) {
     location.href = '../html/login.html';
 }
 
+let active = document.querySelector('.active');
+active.onclick=function(){
+    location.href = '../html/index.html';
+    console.log(1);
+}
 
 /* 
     面向对象的形式编程：
@@ -205,7 +210,6 @@ class Car {
             num = item.goods_num * 1 + num * 1;
         });
 
-        console.log(num);
         this.carttable.innerHTML = str;
         // this.prices.innerHTML = sum;
         this.zj.innerHTML = num;

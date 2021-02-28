@@ -21,6 +21,13 @@ if (!login) {
   localStorage.setItem('url', location.href);
   location.href = '../html/login.html';
 }
+
+var active = document.querySelector('.active');
+
+active.onclick = function () {
+  location.href = '../html/index.html';
+  console.log(1);
+};
 /* 
     面向对象的形式编程：
     【1】创建对象 class Car{}
@@ -189,7 +196,6 @@ function () {
         str += "\n            <div class=\"item-list have-margin\">\n            <div class=\"cart-group\">\n                    <div class=\"cart-items\">\n                        <div class=\"cart-item\">\n                            <div class=\"checkbox\">\n                            <input type=\"checkbox\" ".concat(item.is_select ? "checked" : '', " class=\"checked checkbox-on\" idx=\"").concat(item.id, "\">\n                            </div>\n                            <div class=\"item-wrapper\">\n                                <div class=\"items-thumb\">\n                                    <img src=\"").concat(item.img, "\" alt=\"\">\n                                </div>\n                                <div class=\"name hide-row\">\n                                    <div class=\"name-table\">\n                                        <a >").concat(item.title, "</a>\n                                        <ul><li>").concat(item.color, "</li></ul>\n                                    </div>\n                                </div>\n                                <div class=\"operation\">\n                                    <a  class=\"del\" idx=\"").concat(item.id, "\"></a>\n                                </div>\n                                <div class=\"\">\n                                    <div class=\"subtotal\">\n                                        <p class=\"discount\">\n                                            <i>\uFFE5</i>\n                                            <span>").concat(xj, "</span>\n                                        </p>\n                                    </div>\n                                    <div class=\"item-cols-num\">\n                                        <div class=\"quanity\">\n                                            <span class=\"button down\" idx=\"").concat(item.id, "\">-</span>\n                                            <span class=\"num\">\n                                                ").concat(item.goods_num, "\n                                            </span>\n                                            <span class=\"button up\" idx=\"").concat(item.id, "\">+</span>\n                                        </div>\n                                    </div>\n                                    <div class=\"price\">").concat(item.price.split('￥')[1].replace(',', ''), "</div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n            </div>\n        </div>\n            ");
         num = item.goods_num * 1 + num * 1;
       });
-      console.log(num);
       this.carttable.innerHTML = str; // this.prices.innerHTML = sum;
 
       this.zj.innerHTML = num;
