@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery/jquery.min.js"></script>
+</head>
+
+<body>
+
+
+    <script>
+        $(function () {
+            $.getJSON("../js/111.json", function (data) {
+                // console.log(data.length);
+                for(let i=0 ;i<data.length;i++) {
+                    let c = i+1
+                    $.ajax({
+                        type: "post",
+                        url: "./test.php",
+                        
+                        data: {
+                            id:c,
+                            title:data[i].title,
+                            img: data[i].img,
+                            title1: data[i].title1,
+                            price: data[i].price,
+                            price2: data[i].price2,
+                            yellow: data[i].yellow
+                        },
+                        async:false,
+                        success: function (res) {
+                            console.log(i);
+                        },
+                        error:function(){
+                            console.log(data[i].title);
+                        }
+                    })
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>
